@@ -12,6 +12,36 @@
       color: white;
       text-align: center;
     }
+    nav {
+      background: rgba(20, 40, 60, 0.85);
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    .nav-links li {
+      display: inline;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 7px 18px;
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: #ff9800;
+      color: #fff;
+    }
     header {
       padding: 50px 20px;
     }
@@ -35,6 +65,30 @@
       border-radius: 30px;
       transition: 0.3s;
     }
+    .btn:hover {
+      background: #e68900;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">الرئيسية</a></li>
+      <li><a href="portfolio.html">أعمالنا</a></li>
+      <li><a href="mailto:yourmail@example.com">تواصل</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>أهلاً بيك في Zaxx Studio</h1>
+    <p>حلول وسائط متعددة بتصميم عصري واحترافي ✨</p>
+    <!-- زرار البورتفوليو -->
+    <a href="portfolio.html" class="btn">📂 شوف أعمالنا</a>
+    <!-- زرار تواصل -->
+    <a href="mailto:yourmail@example.com" class="btn">✉️ تواصل معنا</a>
+  </header>
+</body>
+</html>    }
     .btn:hover {
       background: #e68900;
       transform: scale(1.05);
