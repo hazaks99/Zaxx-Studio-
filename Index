@@ -2,10 +2,51 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>Zaxx Studio</title>
+  <title>Zaxx Studio - Location Test</title>
 </head>
-<body>
-  <h1>أهلاً بيك في Zaxx Studio 🚀</h1>
-  <p>الموقع شغال دلوقتي من خلال GitHub Pages.</p>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+  <h1>أهلاً 👋</h1>
+  <p>اضغط على الزر تحت علشان نجيب مكانك</p>
+  <button onclick="getLocation()" style="padding: 10px 20px; font-size: 16px;">📍 اعرض موقعي</button>
+
+  <p id="output" style="margin-top:20px; font-weight: bold;"></p>
+
+  <script>
+    function getLocation() {
+      let output = document.getElementById("output");
+      
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+        output.innerHTML = "⏳ جاري تحديد موقعك ...";
+      } else {
+        output.innerHTML = "المتصفح بتاعك مش بيدعم GPS.";
+      }
+    }
+
+    function showPosition(position) {
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+      let googleMapLink = `https://www.google.com/maps?q=${lat},${lon}`;
+      document.getElementById("output").innerHTML = 
+        `📍 إحداثياتك: <br> خط العرض: ${lat} <br> خط الطول: ${lon} <br><br>
+        <a href="${googleMapLink}" target="_blank">افتح موقعي على الخريطة 🌍</a>`;
+    }
+
+    function showError(error) {
+      switch(error.code) {
+        case error.PERMISSION_DENIED:
+          document.getElementById("output").innerHTML = "❌ رفضت السماح بالوصول للموقع.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          document.getElementById("output").innerHTML = "⚠️ معلومات الموقع غير متاحة.";
+          break;
+        case error.TIMEOUT:
+          document.getElementById("output").innerHTML = "⌛ انتهى وقت الطلب.";
+          break;
+        default:
+          document.getElementById("output").innerHTML = "حصل خطأ غير معروف.";
+      }
+    }
+  </script>
 </body>
 </html>
