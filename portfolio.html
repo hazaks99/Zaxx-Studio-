@@ -3,91 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Zaxx Studio</title>
+  <title>أعمالنا | Zaxx Studio</title>
   <style>
     body {
       margin: 0;
       font-family: "Cairo", Arial, sans-serif;
-      background: #111;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: white;
       text-align: center;
     }
-
-    header {
-      background: #ff9800;
-      padding: 20px;
+    nav {
+      background: rgba(20, 40, 60, 0.85);
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    header h1 {
+    .nav-links {
+      list-style: none;
+      padding: 0;
       margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
     }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
+    .nav-links li {
+      display: inline;
     }
-
-    .card {
-      background: #222;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 7px 18px;
+      border-radius: 20px;
+      transition: background 0.2s;
     }
-
-    .card:hover {
-      transform: scale(1.05);
+    .nav-links a:hover, .nav-links a.active {
+      background: #ff9800;
+      color: #fff;
     }
-
-    .card img {
+    header {
+      padding: 40px 20px 10px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0 0 10px 0;
+    }
+    .portfolio-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      padding: 30px 10px 60px 10px;
+    }
+    .portfolio-item {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+      width: 310px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.18s;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-8px) scale(1.03);
+      background: rgba(255, 255, 255, 0.13);
+    }
+    .portfolio-item img {
       width: 100%;
-      display: block;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
     }
-
-    .card h3 {
-      margin: 10px 0;
+    .portfolio-title {
+      font-size: 1.3em;
+      margin: 8px 0 6px 0;
       color: #ff9800;
     }
-
-    .back-btn {
+    .portfolio-desc {
+      font-size: 1em;
+      color: #eee;
+      margin-bottom: 8px;
+    }
+    .btn-back {
       display: inline-block;
-      margin: 20px;
-      padding: 10px 20px;
+      margin: 30px 0 0 0;
+      padding: 12px 28px;
       background: #ff9800;
-      color: #111;
-      text-decoration: none;
-      border-radius: 5px;
+      color: white;
+      font-size: 1.1em;
       font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+    .btn-back:hover {
+      background: #e68900;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="portfolio.html" class="active">أعمالنا</a></li>
+      <li><a href="mailto:yourmail@example.com">تواصل</a></li>
+    </ul>
+  </nav>
   <header>
-    <h1>معرض أعمال Zaxx Studio</h1>
+    <h1>أعمالنا</h1>
+    <p>هنا بعض من مشاريعنا وأعمالنا المميزة</p>
   </header>
-
-  <div class="gallery">
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250" alt="عمل 1">
-      <h3>مشروع 1</h3>
-      <p>وصف مختصر عن المشروع.</p>
+  <div class="portfolio-container">
+    <!-- Example project 1 -->
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/310x160/ff9800/fff?text=Project+1" alt="Project 1">
+      <div class="portfolio-title">مشروع 1</div>
+      <div class="portfolio-desc">وصف مختصر عن المشروع الأول يوضح فكرة العمل والمهارات المستخدمة فيه.</div>
     </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250" alt="عمل 2">
-      <h3>مشروع 2</h3>
-      <p>وصف مختصر عن المشروع.</p>
+    <!-- Example project 2 -->
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/310x160/203a43/fff?text=Project+2" alt="Project 2">
+      <div class="portfolio-title">مشروع 2</div>
+      <div class="portfolio-desc">وصف مختصر عن المشروع الثاني مع تفاصيل إضافية حول الإنجازات.</div>
     </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250" alt="عمل 3">
-      <h3>مشروع 3</h3>
-      <p>وصف مختصر عن المشروع.</p>
+    <!-- Example project 3 -->
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/310x160/2c5364/fff?text=Project+3" alt="Project 3">
+      <div class="portfolio-title">مشروع 3</div>
+      <div class="portfolio-desc">يمكنك إضافة المزيد من المشاريع بنفس النمط.</div>
     </div>
   </div>
-
-  <a href="index.html" class="back-btn">⬅️ رجوع للرئيسية</a>
+  <a href="index.html" class="btn-back">⬅️ العودة للرئيسية</a>
 </body>
 </html>
